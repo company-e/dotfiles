@@ -71,6 +71,7 @@ set shiftwidth=4        " vimが自動で生成するtab幅をスペース４つ
 " 表示関係
 "set list               " 不可視文字の可視化
 set number              " 行番号の表示
+set relativenumber      " 相対位置の番号で表示
 set title       
 set showcmd             " ウィドウの右下にまだ実行していない入力中のコマンドを表示
 set display=lastline    " 省略されずに表示
