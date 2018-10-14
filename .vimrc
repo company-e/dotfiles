@@ -31,7 +31,7 @@ call dein#add('Shougo/unite-outline')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('thinca/vim-quickrun')
 call dein#add('justmao945/vim-clang')
-
+call dein#add('reireias/vim-cheatsheet')
 
 " インサートモード時に有効化
 call dein#add('Shougo/neocomplete.vim',         {'on_i':1})
@@ -52,8 +52,11 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 syntax on
-
-colorscheme desert
+colorscheme molokai
+set t_Co=256
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+"set background=dark
 
 
 " 検索関係
@@ -111,9 +114,15 @@ inoremap <C-l> <Right>
 " vを２回で行末まで選択
 vnoremap v $h
 
-" TAB似て対応ペアにジャンプ
+" TABで対応ペアにジャンプ
 nnoremap <TAB> %
 vnoremap <TAB> %
+
+" ウィンドウ感の移動
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 
 function! ImInActivate()
     call system('fcitx-remote -c')
@@ -329,3 +338,7 @@ let g:neocomplete#enable_at_startup = 1
 " 補完に時間がかかってもスキップしない
 let g:neocomplete#skip_auto_completion_time = ""
 
+
+"================================================
+"vim-cheatsheet
+let g:cheatsheet#cheat_file = '~/cheatsheet.md'
