@@ -73,6 +73,7 @@ set shiftwidth=4        " vimが自動で生成するtab幅をスペース４つ
 
 " 表示関係
 "set list               " 不可視文字の可視化
+set whichwrap=b,s,h,l,<,>,[,],~ " カーソルの左右移動で行末から次の行の行頭への移動が可能になる
 set number              " 行番号の表示
 set relativenumber      " 相対位置の番号で表示
 set title       
@@ -81,6 +82,15 @@ set display=lastline    " 省略されずに表示
 set cmdheight=2         " コマンドウィンドウの高さを２行にする
 set laststatus=2        " ステータス行を常に表示
 
+"------- Cursor -----"
+"挿入モードでカーソル形状を変更する
+let &t_SI.="\e[6 q"
+let &t_EI.="\e[2 q"
+"カーソル形状がすぐに元に戻らないのでタイムアウト時間を調整
+set ttimeoutlen=10
+"挿入モードを抜けた時にカーソルが見えなくなる現象対策(なぜかこれで治る)
+inoremap <ESC> <ESC>
+set mouse=a
 " 設定
 set nobackup            " バックアップファイルは作らない
 set noswapfile         " スワップファイルは作らない

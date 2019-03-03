@@ -1,6 +1,7 @@
-DOT_FILES=(.vimrc)
+DOT_FILES=(.bashrc .vimrc)
 
 for file in ${DOT_FILES[@]}
 do
-	ln -s $HOME/dotfiles/$file $HOME/$file
+	ln -snfv $HOME/dotfiles/$file $HOME/$file
 done
+
