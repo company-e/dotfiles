@@ -32,6 +32,7 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('thinca/vim-quickrun')
 call dein#add('justmao945/vim-clang')
 call dein#add('reireias/vim-cheatsheet')
+call dein#add('tpope/vim-surround')
 
 " インサートモード時に有効化
 call dein#add('Shougo/neocomplete.vim',         {'on_i':1})
