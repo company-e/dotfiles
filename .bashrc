@@ -128,3 +128,12 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
+
+# powerline
+function _update_ps1() {
+    PS1="$(~/.local/bin/powerline-shell $?)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
